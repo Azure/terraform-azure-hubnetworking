@@ -167,17 +167,17 @@ A map of the hub virtual networks to create. The map key is an arbitrary value t
   - `zones` - (Optional) A list of availability zones to use for the Azure Firewall. If not specified will be `null`.
   - `default_ip_configuration` - (Optional) An object with the following fields. If not specified the defaults below will be used:
     - `name` - (Optional) The name of the default IP configuration. If not specified will use `default`.
+    - `tags` - (Optional) A map of tags to apply to the public IP configuration.
     - `public_ip_config` - (Optional) An object with the following fields:
       - `name` - (Optional) The name of the public IP configuration. If not specified will use `pip-afw-{vnetname}`.
-      - `tags` - (Optional) A map of tags to apply to the public IP configuration.
       - `zones` - (Optional) A list of availability zones to use for the public IP configuration. If not specified will be `null`.
       - `ip_version` - (Optional) The IP version to use for the public IP configuration. Possible values include `IPv4`, `IPv6`. If not specified will be `IPv4`.
       - `sku_tier` - (Optional) The SKU tier to use for the public IP configuration. Possible values include `Regional`, `Global`. If not specified will be `Regional`.
   - `management_ip_configuration` - (Optional) An object with the following fields. If not specified the defaults below will be used:
     - `name` - (Optional) The name of the management IP configuration. If not specified will use `defaultMgmt`.
+    - `tags` - (Optional) A map of tags to apply to the public IP configuration.
     - `public_ip_config` - (Optional) An object with the following fields:
       - `name` - (Optional) The name of the public IP configuration. If not specified will use `pip-afw-mgmt-<Map Key>`.
-      - `tags` - (Optional) A map of tags to apply to the public IP configuration.
       - `zones` - (Optional) A list of availability zones to use for the public IP configuration. If not specified will be `null`.
       - `ip_version` - (Optional) The IP version to use for the public IP configuration. Possible values include `IPv4`, `IPv6`. If not specified will be `IPv4`.
       - `sku_tier` - (Optional) The SKU tier to use for the public IP configuration. Possible values include `Regional`, `Global`. If not specified will be `Regional`.
