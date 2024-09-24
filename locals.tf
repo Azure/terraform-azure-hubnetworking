@@ -100,7 +100,7 @@ locals {
       for k, v in var.hub_virtual_networks : [
         for subnetName, subnet in v.subnets : {
           name           = "${k}-${subnetName}"
-          subnet_id      = lookup(local.virtual_networks_modules[k].vnet_subnets_name_id, subnetName)
+          subnet_id      = local.virtual_networks_modules[k].vnet_subnets_name_id[subnetName]
           route_table_id = subnet.external_route_table_id
         } if subnet.external_route_table_id != null
       ]
@@ -111,7 +111,7 @@ locals {
       for k, v in var.hub_virtual_networks : [
         for subnetName, subnet in v.subnets : {
           name           = "${k}-${subnetName}"
-          subnet_id      = lookup(local.virtual_networks_modules[k].vnet_subnets_name_id, subnetName)
+          subnet_id      = local.virtual_networks_modules[k].vnet_subnets_name_id[subnetName]
           route_table_id = local.hub_routing[k].id
         } if subnet.assign_generated_route_table
       ]
