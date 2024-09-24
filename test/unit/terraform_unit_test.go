@@ -615,6 +615,7 @@ func TestUnit_VnetWithFirewallShouldCreatePublicIp(t *testing.T) {
 					"resource_group_name": "rg0",
 					"ip_version":          "IPv4",
 					"sku_tier":            "Regional",
+					"tags":                nil,
 					"zones":               nil,
 				},
 			},
